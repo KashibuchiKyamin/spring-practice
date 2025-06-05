@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
+    <script>
+        var tableData = "/ajaxResponse/base-table.json";
+    </script>
+    <script type="module" src="/static/js/base.js"></script>
+
+    <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
+    <!-- ライブラリのCSSを上書きするのでこの順序にする。 -->
+    <link rel="stylesheet" href="/static/css/common.css">
+    <title>UI部品基本設計</title>
+</head>
+
+<body>
+    <h1>UI部品基本設計</h1>
+    <hr>
+    <h2>部品名リンク一覧</h2>
+    <ul>
+        <li><a href="#checkbox">チェックボックス</a></li>
+        <li><a href="#radiobutton">ラジオボタン</a></li>
+        <li><a href="#textbox-one-line">文字入力(1行)</a></li>
+        <li><a href="#textbox-multiple-lines">文字入力(複数行)</a></li>
+        <li><a href="#textbox-date">日付入力</a></li>
+        <li><a href="#textbox-time">時刻入力</a></li>
+        <li><a href="#selectbox">セレクトボックス</a></li>
+        <li><a href="#send-button">送信または遷移ボタン</a></li>
+        <li><a href="#nosend-button">送信のない入力ボタン</a></li>
+        <li><a href="#cancel-button">キャンセルボタン</a></li>
+        <li><a href="#back-button">戻るボタン</a></li>
+        <li><a href="#disable-button">非活性ボタン</a></li>
+        <li><a href="#error-message">エラーメッセージ</a></li>
+        <li><a href="#gridjs-table-server-side">テーブル(Grid.jsによるサーバサイドに依存する表示)</a></li>
+        <li><a href="#gridjs-table-client-side">テーブル(Grid.jsによるサーバサイドに依らない表示)</a></li>
+        <li><a href="#table-static">テーブル(普通のテーブル)</a></li>
+    </ul>
+    <hr>
+    <h2>入力欄</h2>
+    <h3 id="checkbox">チェックボックス</h3>
+    <input type="checkbox" id="checkboxsample" name="checkboxsample" checked />
+    <label for="checkboxsample">チェックボックス</label>
+
+    <h3 id="radiobutton">ラジオボタン</h3>
+    <label class="radioBlock"><input type="radio" name="5" />選択肢1</label>
+    <label class="radioBlock"><input type="radio" name="5" />選択肢2</label>
+    <label class="radioBlock"><input type="radio" name="5" />選択肢3</label>
+
+    <h3 id="textbox-one-line">テキストボックス(1行)</h3>
+    <input type="text" id="textsample" name="textsample" placeholder="テキスト" />
+
+    <h3 id="textbox-multiple-lines">テキストボックス(複数行)</h3>
+    <textarea id="textareasample" name="textareasample" placeholder="テキスト"></textarea>
+
+    <h3 id="textbox-date">日付入力</h3>
+    <input type="date" />
+
+    <h3 id="textbox-time">時刻入力</h3>
+    <input type="time" />
+
+    <h3 id="selectbox">セレクトボックス</h3>
+    <select name="" id="">
+        <option value="">選択肢1</option>
+        <option value="">選択肢2</option>
+        <option value="">選択肢3</option>
+    </select>
+    <hr>
+
+    <h2>ボタン</h2>
+    <h3 id="send-button">送信または遷移</h3>
+    <button class="send">action</button>
+    <h3 id="nosend-button">送信のない入力</h3>
+    <button class="notSend">action</button>
+    <h3 id="cancel-button">キャンセル</h3>
+    <button class="cancel">action</button>
+    <h3 id="back-button">戻る</h3>
+    <button class="back">action</button>
+    <h3 id="disable-button">非活性</h3>
+    <button class="send" disabled>action</button>
+    <hr>
+
+    <h2 id="error-message">エラーメッセージ</h2>
+    <ul>
+        <li class="errorMessage">○○は入力必須の項目です。入力してください。</li>
+        <li class="errorMessage">○○は半角数字10桁で入力してください。</li>
+    </ul>
+    <hr>
+
+    <h2 id="gridjs-table-server-side">テーブル(Grid.jsによるサーバサイドに依存する表示)</h2>
+    <div id="gridjs-table"></div>
+
+    <h2 id="gridjs-table-client-side">テーブル(Grid.jsによるサーバサイドに依らない表示)</h2>
+    <div id="gridjs-table-static"></div>
+
+    <h2 id="#table-static">テーブル(普通のテーブル)</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    <div>名前</div>
+                </th>
+                <th>
+                    <div>名前</div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td data-column-id="name" class="gridjs-td" style="border: 1px solid rgb(204, 204, 204);">
+                    John
+                </td>
+                <td data-column-id="email" class="gridjs-td" style="border: 1px solid rgb(204, 204, 204);">
+                    john@example.com
+                </td>
+            </tr>
+            <tr>
+                <td data-column-id="name" class="gridjs-td" style="border: 1px solid rgb(204, 204, 204);">
+                    Mark
+                </td>
+                <td data-column-id="email" class="gridjs-td" style="border: 1px solid rgb(204, 204, 204);">
+                    mark@gmail.com
+                </td>
+            </tr>
+            <tr>
+                <td data-column-id="name" class="gridjs-td" style="border: 1px solid rgb(204, 204, 204);">
+                    Eoin
+                </td>
+                <td data-column-id="email" class="gridjs-td" style="border: 1px solid rgb(204, 204, 204);">
+                    eo3n@yahoo.com
+                </td>
+            </tr>
+            <tr>
+                <td data-column-id="name" class="gridjs-td" style="border: 1px solid rgb(204, 204, 204);">
+                    Nisen
+                </td>
+                <td data-column-id="email" class="gridjs-td" style="border: 1px solid rgb(204, 204, 204);">
+                    nis900@gmail.com
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+<footer>
+    
+</footer>
+
+</html>

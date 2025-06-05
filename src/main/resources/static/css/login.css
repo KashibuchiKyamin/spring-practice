@@ -1,0 +1,12 @@
+label.loginFormLabel {
+    display: block;
+
+}
+
+.loginForm {
+    text-align: center;
+}
+
+button.send {
+    margin-top: 20px;
+}

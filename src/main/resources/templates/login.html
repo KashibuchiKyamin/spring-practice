@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/common.css">
+    <link rel="stylesheet" href="/static/css/login.css">
+    <script type="module" src="/static/js/login.js"></script>
+    <title>ログイン</title>
+</head>
+
+<body>
+    <h1>ログイン</h1>
+    <hr>
+
+    <form class="loginForm" action="top.html">
+        <ul>
+            <li class="errorMessage">○○は入力必須の項目です。入力してください。</li>
+            <li class="errorMessage">○○は半角数字10桁で入力してください。</li>
+        </ul>
+        <label class="loginFormLabel">
+            メールアドレス：
+            <input type="text" id="mailAddress" name="mailAddress" placeholder="user@example.com" />
+        </label>
+        <label class="loginFormLabel">
+            パスワード：
+            <input type="password" id="password" name="password" />
+        </label>
+        <button class="send">ログイン</button>
+    </form>
+
+</body>
+
+<footer>
+    
+</footer>
+
+</html>
