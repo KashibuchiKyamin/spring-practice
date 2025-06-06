@@ -1,0 +1,11 @@
+{
+  "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ...",
+  "refreshToken": "eyJjdHkiOiJKV1QiLCJlbmMiOiJBMjU2...",
+  "expiresIn": 3600,
+  "tokenType": "Bearer",
+  "issuedAt": "2025-06-07T01:21:00Z",
+  "user": {
+    "userId": "USR20250601001",
+    "role": "admin"
+  }
+}

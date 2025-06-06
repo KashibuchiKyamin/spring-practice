@@ -1,0 +1,5 @@
+{
+  "username": "exampleUser",
+  "password": "securePassword123",
+  "grantType": "password"
+}

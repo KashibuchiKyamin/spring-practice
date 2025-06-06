@@ -1,0 +1,111 @@
+{
+  "project": {
+    "projectId": "PRJ20250601001",
+    "name": "都立花巻中学校2025年度卒業アルバム",
+    "client": "都立花巻中学校",
+    "salesRepresentative": "田中 一郎"
+  },
+  "specifications": {
+    "size": "A4縦",
+    "pages": [
+      {
+        "spec": 4,
+        "description": "表紙"
+      },
+      {
+        "spec": 72,
+        "description": "本文"
+      }
+    ],
+    "printing": [
+      {
+        "spec": "特1/0",
+        "description": "表紙"
+      },
+      {
+        "spec": "4/4",
+        "description": "本文"
+      }
+    ],
+    "processing": [
+      {
+        "spec": "片面マットPP貼",
+        "description": "表紙"
+      }
+    ],
+    "binding": "無線綴じ(左綴じ)",
+    "copies": 400
+  },
+  "paperInfo": [
+    {
+      "description": "表紙",
+      "name": "ほげほげマット",
+      "size": "菊判",
+      "reamWeight": "93.5kg",
+      "cut": "四裁",
+      "quantity": "00包",
+      "deliveryDate": "2025-06-10",
+      "supplier": "〇〇紙販売株式会社"
+    },
+    {
+      "description": "本文",
+      "name": "ほげほげコート",
+      "size": "菊判",
+      "reamWeight": "76.5kg",
+      "cut": "半裁",
+      "quantity": "00包",
+      "deliveryDate": "2025-06-12",
+      "supplier": "△△紙商事"
+    }
+  ],
+  "printingInfo": [
+    {
+      "spec": "特1C/0C",
+      "description": "表紙",
+      "size": "菊判四裁",
+      "quantity": "000通し",
+      "specialColor": "特色DIC254",
+      "startDate": "2025-06-15",
+      "endDate": "2025-06-18",
+      "supplier": "自社",
+      "direction": "T"
+    },
+    {
+      "spec": "4C/4C",
+      "description": "本文",
+      "size": "菊判半裁",
+      "quantity": "000通し",
+      "specialColor": "-",
+      "startDate": "2025-06-16",
+      "endDate": "2025-06-20",
+      "supplier": "自社",
+      "direction": "Y"
+    }
+  ],
+  "processingInfo": [
+    {
+      "spec": "片面マットPP",
+      "description": "表紙",
+      "startDate": "2025-06-21",
+      "endDate": "2025-06-23",
+      "supplier": "なんとか紙工"
+    }
+  ],
+  "bindingInfo": [
+    {
+      "spec": "無線綴じ(左綴じ)",
+      "startDate": "2025-06-24",
+      "endDate": "2025-06-26",
+      "supplier": "なんとか製本"
+    }
+  ],
+  "deliveryInfo": [
+    {
+      "method": "トラック配送",
+      "quantity": 400,
+      "destination": "都立花巻中学校",
+      "startDate": "2025-06-27",
+      "endDate": "2025-06-28"
+    }
+  ]
+}
