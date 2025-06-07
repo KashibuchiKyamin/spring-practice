@@ -3,7 +3,11 @@ plugins {
 	id 'war'
 	id 'org.springframework.boot' version '3.4.6'
 	id 'io.spring.dependency-management' version '1.1.7'
+	id 'org.dddjava.jig-gradle-plugin' version '2025.5.1'
 }
+
+[compileJava, processResources]*.shouldRunAfter(clean)
+jigReports.dependsOn(clean, classes)
 
 group = 'com.kashibuchikyamin'
 version = '0.0.1-SNAPSHOT'
@@ -38,4 +42,11 @@ dependencies {
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+
+jig {
+	// パッケージにかかわらず全ての要素を出力する
+	modelPattern = '.+'
+	// パッケージ関連図とビジネスルール一覧のみ出力する
+	documentTypes = ['PackageRelationDiagram', 'BusinessRuleList']
 }
