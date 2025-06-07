@@ -1,7 +1,7 @@
 {
   "uuid": "6eed2076-095e-46cf-a45c-4e15a1538453",
   "lastMigration": 33,
-  "name": "Offsethub",
+  "name": "印刷業務管理システム",
   "endpointPrefix": "offsethub",
   "latency": 0,
   "port": 3000,
@@ -11,13 +11,13 @@
     {
       "uuid": "3ef77ae5-5f7e-4b12-94a0-02a32a1b9443",
       "type": "http",
-      "documentation": "",
+      "documentation": "案件情報取得API",
       "method": "get",
       "endpoint": "projectInfo",
       "responses": [
         {
           "uuid": "5ec9dc47-6d38-4046-9ce3-5dc25bdc284a",
-          "body": "{}",
+          "body": "{\n  \"project\": {\n    \"projectId\": \"PRJ20250601001\",\n    \"name\": \"都立花巻中学校2025年度卒業アルバム\",\n    \"client\": \"都立花巻中学校\",\n    \"salesRepresentative\": \"田中 一郎\"\n  },\n  \"specifications\": {\n    \"size\": \"A4縦\",\n    \"pages\": [\n      {\n        \"spec\": 4,\n        \"description\": \"表紙\"\n      },\n      {\n        \"spec\": 72,\n        \"description\": \"本文\"\n      }\n    ],\n    \"printing\": [\n      {\n        \"spec\": \"特1/0\",\n        \"description\": \"表紙\"\n      },\n      {\n        \"spec\": \"4/4\",\n        \"description\": \"本文\"\n      }\n    ],\n    \"processing\": [\n      {\n        \"spec\": \"片面マットPP貼\",\n        \"description\": \"表紙\"\n      }\n    ],\n    \"binding\": \"無線綴じ(左綴じ)\",\n    \"copies\": 400\n  },\n  \"paperInfo\": [\n    {\n      \"description\": \"表紙\",\n      \"name\": \"ほげほげマット\",\n      \"size\": \"菊判\",\n      \"reamWeight\": \"93.5kg\",\n      \"cut\": \"四裁\",\n      \"quantity\": \"00包\",\n      \"deliveryDate\": \"2025-06-10\",\n      \"supplier\": \"〇〇紙販売株式会社\"\n    },\n    {\n      \"description\": \"本文\",\n      \"name\": \"ほげほげコート\",\n      \"size\": \"菊判\",\n      \"reamWeight\": \"76.5kg\",\n      \"cut\": \"半裁\",\n      \"quantity\": \"00包\",\n      \"deliveryDate\": \"2025-06-12\",\n      \"supplier\": \"△△紙商事\"\n    }\n  ],\n  \"printingInfo\": [\n    {\n      \"spec\": \"特1C/0C\",\n      \"description\": \"表紙\",\n      \"size\": \"菊判四裁\",\n      \"quantity\": \"000通し\",\n      \"specialColor\": \"特色DIC254\",\n      \"startDate\": \"2025-06-15\",\n      \"endDate\": \"2025-06-18\",\n      \"supplier\": \"自社\",\n      \"direction\": \"T\"\n    },\n    {\n      \"spec\": \"4C/4C\",\n      \"description\": \"本文\",\n      \"size\": \"菊判半裁\",\n      \"quantity\": \"000通し\",\n      \"specialColor\": \"-\",\n      \"startDate\": \"2025-06-16\",\n      \"endDate\": \"2025-06-20\",\n      \"supplier\": \"自社\",\n      \"direction\": \"Y\"\n    }\n  ],\n  \"processingInfo\": [\n    {\n      \"spec\": \"片面マットPP\",\n      \"description\": \"表紙\",\n      \"startDate\": \"2025-06-21\",\n      \"endDate\": \"2025-06-23\",\n      \"supplier\": \"なんとか紙工\"\n    }\n  ],\n  \"bindingInfo\": [\n    {\n      \"spec\": \"無線綴じ(左綴じ)\",\n      \"startDate\": \"2025-06-24\",\n      \"endDate\": \"2025-06-26\",\n      \"supplier\": \"なんとか製本\"\n    }\n  ],\n  \"deliveryInfo\": [\n    {\n      \"method\": \"トラック配送\",\n      \"quantity\": 400,\n      \"destination\": \"都立花巻中学校\",\n      \"startDate\": \"2025-06-27\",\n      \"endDate\": \"2025-06-28\"\n    }\n  ]\n}\n",
           "latency": 0,
           "statusCode": 200,
           "label": "",
@@ -42,13 +42,13 @@
     {
       "uuid": "d4449eba-42bb-4324-8a81-c6d981e94f26",
       "type": "http",
-      "documentation": "",
+      "documentation": "認証API",
       "method": "post",
       "endpoint": "auth",
       "responses": [
         {
           "uuid": "8059ca51-5d8d-4e1a-b4e1-0b218dca5f66",
-          "body": "{}",
+          "body": "{\r\n  \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ...\",\r\n  \"refreshToken\": \"eyJjdHkiOiJKV1QiLCJlbmMiOiJBMjU2...\",\r\n  \"expiresIn\": 3600,\r\n  \"tokenType\": \"Bearer\",\r\n  \"issuedAt\": \"2025-06-07T01:21:00Z\",\r\n  \"user\": {\r\n    \"userId\": \"USR20250601001\",\r\n    \"role\": \"admin\"\r\n  }\r\n}\r\n",
           "latency": 0,
           "statusCode": 201,
           "label": "",
