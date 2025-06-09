@@ -5,6 +5,6 @@ package com.kashibuchikyamin.spring_practice.domain.model.user;
  * @param userName ユーザ名
  * @param password パスワード
  */
-public record User(String userName, String password) {
+public record User(String userName, String password){
 
 }
