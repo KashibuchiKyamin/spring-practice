@@ -10,31 +10,37 @@ import com.kashibuchikyamin.spring_practice.domain.model.user.User;
  */
 @Repository
 public class UserRepositoryImpl implements UserRepository {
-	
+
+	/**
+	 * ユーザマッパー
+	 */
 	UserMapper userMapper;
+
+	public UserRepositoryImpl(UserMapper userMapper) {
+		this.userMapper = userMapper;
+	}
 
 	@Override
 	public void registerUser(String userName, String password) {
-		// TODO 自動生成されたメソッド・スタブ
-		
+		userMapper.registerUser(userName, password);
+
 	}
 
 	@Override
 	public User findUserByUsername(String userName) {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
+		User user = userMapper.findUserByUsername(userName);
+		return user;
 	}
 
 	@Override
 	public void updatePassword(String userName, String newPassword) {
-		// TODO 自動生成されたメソッド・スタブ
-		
+		userMapper.updatePassword(userName, newPassword);
 	}
 
 	@Override
 	public void deleteUser(String userName) {
-		// TODO 自動生成されたメソッド・スタブ
-		
+		userMapper.deleteUser(userName);
+
 	}
 
 }
