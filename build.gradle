@@ -44,9 +44,6 @@ tasks.named('test') {
 	useJUnitPlatform()
 }
 
-jig {
-	// パッケージにかかわらず全ての要素を出力する
-	modelPattern = '.+'
-	// パッケージ関連図とビジネスルール一覧のみ出力する
-	documentTypes = ['PackageRelationDiagram', 'BusinessRuleList']
-}
+
+[compileJava, processResources]*.shouldRunAfter(clean)
+jigReports.dependsOn(clean, classes)

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -14,14 +14,14 @@
     <h1>ログイン</h1>
     <hr>
 
-    <form class="loginForm" action="top.html">
+    <form class="loginForm" action="top.html" th:action="@{/login}" method="post">
         <ul>
             <li class="errorMessage">○○は入力必須の項目です。入力してください。</li>
             <li class="errorMessage">○○は半角数字10桁で入力してください。</li>
         </ul>
         <label class="loginFormLabel">
             メールアドレス：
-            <input type="text" id="mailAddress" name="mailAddress" placeholder="user@example.com" />
+            <input type="text" id="mailAddress" name="username" placeholder="user@example.com" />
         </label>
         <label class="loginFormLabel">
             パスワード：
