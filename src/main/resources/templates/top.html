@@ -4,16 +4,15 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script type="module" src="https://unpkg.com/gridjs/dist/gridjs.umd.js"
-		th:src="@{/static/js/gridjs.umd.js}"></script>
+	<script type="module" src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
 	<script>
 		var tableData = "/ajaxResponse/top.json";
 	</script>
-	<script type="module" src="/static/js/top.js" th:src="@{/static/js/top.js}"></script>
+	<script type="module" src="/static/js/top.js" th:src="@{/js/top.js}"></script>
 
 	<link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
 	<!-- ライブラリのCSSを上書きするのでこの順序にする。 -->
-	<link rel="stylesheet" href="/static/css/common.css" th:href="@{/static/css/common.css}" />
+	<link rel="stylesheet" href="/static/css/common.css" th:href="@{/css/common.css}" />
 	<title>トップページ</title>
 </head>
 
@@ -31,4 +30,4 @@
 
 </footer>
 
-</html lang="ja">
+</html>

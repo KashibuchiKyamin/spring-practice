@@ -23,25 +23,16 @@ public class SecurityConfig {
 						.anyRequest().authenticated())
 				.formLogin(form -> form
 						.loginPage("/login")
-						.loginProcessingUrl("/login") // POST先
 						.defaultSuccessUrl("/top", true)
 						.permitAll())
-				.logout(logout -> logout.permitAll());
-
+				.logout(logout -> logout
+						.logoutSuccessUrl("/login?logout")
+						.permitAll());
 		return http.build();
 	}
 
-	/** 
-	 * パスワードエンコーダーを定義します。
-	 * @return PasswordEncoderのインスタンス
-	 */
 	@Bean
 	PasswordEncoder passwordEncoder() {
-
-		BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
-
-		System.out.println(bCryptPasswordEncoder.encode("password"));
-
-		return bCryptPasswordEncoder;
+		return new BCryptPasswordEncoder();
 	}
 }

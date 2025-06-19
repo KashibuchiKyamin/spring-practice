@@ -12,18 +12,18 @@ import com.kashibuchikyamin.spring_practice.domain.model.user.User;
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 
-    UserRepository userRepository;
+	UserRepository userRepository;
 
-    public UserDetailsServiceImpl(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
+	public UserDetailsServiceImpl(UserRepository userRepository) {
+		this.userRepository = userRepository;
+	}
 
-    @Override
-    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        User user = userRepository.findUserByEmail(email);
-        if (user == null) {
-        	throw new UsernameNotFoundException(email + " not found");
-        }
-        return new AppUser(user, true);
-    }
+	@Override
+	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+		User user = userRepository.findUserByEmail(email);
+		if (user == null) {
+			throw new UsernameNotFoundException(email + " not found");
+		}
+		return new AppUser(user, true);
+	}
 }
