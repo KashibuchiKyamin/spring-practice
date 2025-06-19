@@ -25,16 +25,19 @@ public class AppUser implements UserDetails {
 		return userName;
 	}
 
+	public String getEmail() {
+		return email;
+	}
+
 	/**
 	 * 認識のためのメールアドレスを返します。
-	 * TODO: 名称が合わないので、getEmail()に変更することを検討する。
 	 * @return メールアドレス
 	 */
 	@Override
 	public String getUsername() {
 		return email;
 	}
- 
+
 	@Override
 	public String getPassword() {
 		return password;

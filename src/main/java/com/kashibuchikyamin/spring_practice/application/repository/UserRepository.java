@@ -5,16 +5,18 @@ import com.kashibuchikyamin.spring_practice.domain.model.user.User;
 public interface UserRepository {
 	/**
 	 * ユーザを登録するメソッド
-	 * @param userName ユーザ名
 	 * @param email メールアドレス
-	 * @param password 暗号化したパスワード
+	 * @param userName ユーザ名
+	 * @param password パスワード
+	 * 暗号化はリポジトリ実装側で行う
 	 */
-	void registerUser(String userName, String email, String password);
+	void registerUser(String email, String userName, String password);
 
 	/**
 	 * ユーザのパスワードを更新するメソッド
 	 * @param email メールアドレス
 	 * @param newPassword 新しいパスワード
+	 * 暗号化はリポジトリ実装側で行う
 	 */
 	void updatePassword(String email, String newPassword);
 
