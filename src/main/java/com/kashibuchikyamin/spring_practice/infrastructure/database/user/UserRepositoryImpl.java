@@ -21,26 +21,24 @@ public class UserRepositoryImpl implements UserRepository {
 	}
 
 	@Override
-	public void registerUser(String userName, String password) {
-		userMapper.registerUser(userName, password);
+	public void registerUser(String userName, String email, String password) {
+		userMapper.registerUser(email, userName, password);
 
 	}
 
 	@Override
-	public User findUserByUsername(String userName) {
-		User user = userMapper.findUserByUsername(userName);
-		return user;
+	public void updatePassword(String email, String newPassword) {
+		userMapper.updatePassword(email, newPassword);
 	}
 
 	@Override
-	public void updatePassword(String userName, String newPassword) {
-		userMapper.updatePassword(userName, newPassword);
+	public void deleteUser(String email) {
+		userMapper.deleteUser(email);
 	}
 
 	@Override
-	public void deleteUser(String userName) {
-		userMapper.deleteUser(userName);
-
+	public User findUserByEmail(String email) {
+		return userMapper.findUserByEmail(email);
 	}
 
 }

@@ -9,22 +9,32 @@ import org.springframework.security.core.userdetails.UserDetails;
  * ユーザの詳細情報を表すクラス。
  */
 public class AppUser implements UserDetails {
-
-	private String username;
+	private String userName;
+	private String email;
 	private String password;
 	private boolean enabled;
 
 	public AppUser(User user, boolean enabled) {
-		this.username = user.userName();
+		this.userName = user.userName();
+		this.email = user.email();
 		this.password = user.password();
 		this.enabled = enabled;
 	}
 
-	@Override
-	public String getUsername() {
-		return username;
+	public String getUserName() {
+		return userName;
 	}
 
+	/**
+	 * 認識のためのメールアドレスを返します。
+	 * TODO: 名称が合わないので、getEmail()に変更することを検討する。
+	 * @return メールアドレス
+	 */
+	@Override
+	public String getUsername() {
+		return email;
+	}
+ 
 	@Override
 	public String getPassword() {
 		return password;

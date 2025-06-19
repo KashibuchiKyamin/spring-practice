@@ -11,54 +11,59 @@ import com.kashibuchikyamin.spring_practice.domain.model.user.User;
 
 @Mapper
 public interface UserMapper {
-
 	/**
 	 * ユーザを登録するメソッド
+	 * @param email メールアドレス
 	 * @param userName ユーザ名
-	 * @param password パスワード
+	 * @param password 暗号化したパスワード
 	 */
 	@Insert("""
-			INSERT INTO users (
-				 user_name
-				,password
-			) VALUES (
-				 #{userName}
-				,#{password}
-			)
+			    INSERT INTO users
+			    (email, user_name, password)
+			    VALUES
+			    (#{email}, #{userName}, #{password})
 			""")
-	void registerUser(@Param("userName") String userName, @Param("userName") String password);
+	void registerUser(
+			@Param("email") String email,
+			@Param("userName") String userName,
+			@Param("password") String password);
 
 	/**
-	 * ユーザを取得するメソッド
-	 * @param userName ユーザ名
+	 * メールアドレスでユーザを検索するメソッド
+	 * @param email メールアドレス
 	 * @return ユーザ情報
 	 */
 	@Select("""
-			SELECT user_name, password
-			FROM users
-			WHERE user_name = #{userName}
+			    SELECT
+			    	email, user_name, password
+			    FROM
+			    	users
+			    WHERE
+			    	email = #{email}
 			""")
-	User findUserByUsername(@Param("userName") String userName);
+	User findUserByEmail(@Param("email") String email);
 
 	/**
 	 * ユーザのパスワードを更新するメソッド
-	 * @param userName ユーザ名
+	 * @param email メールアドレス
 	 * @param newPassword 新しいパスワード
 	 */
 	@Update("""
-			UPDATE users
-			SET password = #{newPassword}
-			WHERE user_name = #{userName}
+			    UPDATE
+			    	users
+			    SET
+			    	password = #{newPassword}
+			    WHERE
+			    	email = #{email}
 			""")
-	void updatePassword(String userName, String newPassword);
+	void updatePassword(@Param("email") String email, @Param("newPassword") String newPassword);
 
 	/**
 	 * ユーザを削除するメソッド
-	 * @param userName	ユーザ名
+	 * @param email メールアドレス
 	 */
 	@Delete("""
-			DELETE FROM users
-			WHERE user_name = #{userName}
+			    DELETE FROM users WHERE email = #{email}
 			""")
-	void deleteUser(String userName);
+	void deleteUser(@Param("email") String email);
 }

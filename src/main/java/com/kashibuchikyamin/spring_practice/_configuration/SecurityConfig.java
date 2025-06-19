@@ -40,7 +40,7 @@ public class SecurityConfig {
 
 		BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
 
-		System.out.println(bCryptPasswordEncoder.encode("p@aaword"));
+		System.out.println(bCryptPasswordEncoder.encode("password"));
 
 		return bCryptPasswordEncoder;
 	}
